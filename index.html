@@ -4,21 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adithye KS | Portfolio</title>
+
+  <!-- ✅ CSS Styling -->
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
     }
 
     body {
-      font-family: "Segoe UI", sans-serif;
       background-color: #0d1117;
       color: #c9d1d9;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 20px;
+      scroll-behavior: smooth;
+    }
+
+    /* ===== Header Section ===== */
+    header {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease;
     }
 
     img.profile {
@@ -27,75 +37,112 @@
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid #58a6ff;
-      box-shadow: 0 0 20px rgba(88,166,255,0.3);
-      margin-bottom: 20px;
+      box-shadow: 0 0 25px rgba(88, 166, 255, 0.3);
     }
 
     h1 {
       color: #58a6ff;
+      margin-top: 15px;
       font-size: 2rem;
-      margin-bottom: 5px;
     }
 
     h3 {
       color: #a3a3a3;
       font-weight: 400;
-      margin-bottom: 20px;
+      margin-top: 8px;
     }
 
+    /* ===== Section Box ===== */
     section {
-      width: 100%;
-      max-width: 900px;
+      width: 90%;
+      max-width: 950px;
       background: #161b22;
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
       padding: 30px;
       margin: 25px 0;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     h2 {
       color: #58a6ff;
-      margin-bottom: 15px;
       border-bottom: 2px solid #58a6ff;
       display: inline-block;
       padding-bottom: 5px;
+      margin-bottom: 20px;
     }
 
     p {
-      line-height: 1.6;
       color: #a6adb7;
-      margin-bottom: 10px;
+      line-height: 1.6;
       text-align: justify;
     }
 
-    .skills, .strengths {
+    /* ===== Strengths (Grid Style) ===== */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .grid-item {
+      background-color: #21262d;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      color: #58a6ff;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .grid-item:hover {
+      background-color: #58a6ff;
+      color: #fff;
+      transform: translateY(-5px);
+    }
+
+    /* ===== Skills (Gradient Cards) ===== */
+    .skills {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
+      gap: 15px;
       margin-top: 15px;
     }
 
-    .skills span, .strengths span {
-      background: #21262d;
+    .skill-card {
+      background: linear-gradient(145deg, #161b22, #0d1117);
+      border: 1px solid #21262d;
+      border-radius: 10px;
       color: #58a6ff;
-      padding: 10px 15px;
-      border-radius: 8px;
-      transition: 0.3s;
-      font-size: 15px;
+      padding: 15px 25px;
+      font-weight: 600;
+      box-shadow: 0 0 10px rgba(88,166,255,0.1);
+      transition: all 0.3s ease;
     }
 
-    .skills span:hover, .strengths span:hover {
-      background: #58a6ff;
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(88,166,255,0.4);
       color: #fff;
     }
 
+    /* ===== Projects ===== */
     .project {
       background: #21262d;
       padding: 20px;
-      border-radius: 10px;
-      margin-top: 15px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+      border-radius: 12px;
+      margin-top: 20px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
     }
 
     .project h3 {
@@ -118,11 +165,17 @@
       background: #1f6feb;
     }
 
+    /* ===== Contact ===== */
+    .social {
+      text-align: center;
+      margin-top: 15px;
+    }
+
     .social a {
       color: #58a6ff;
-      margin: 0 8px;
-      text-decoration: none;
+      margin: 0 10px;
       font-size: 16px;
+      text-decoration: none;
       transition: 0.3s;
     }
 
@@ -131,73 +184,78 @@
     }
 
     footer {
-      margin-top: 40px;
       text-align: center;
+      margin: 40px 0;
       color: #8b949e;
       font-size: 14px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <!-- 👤 Profile Header -->
-  <img src="profile.jpg" alt="Adithye KS" class="profile">
-  <h1>👋 Hi, I'm Adithye KS</h1>
-  <h3>🎓 BCA Final Year Student | 💡 Exploring Modern App Development</h3>
+  <!-- ===== Header Section ===== -->
+  <header>
+    <img src="profile.jpg" alt="Adithye KS" class="profile">
+    <h1>👋 Hi, I'm Adithye KS</h1>
+    <h3>🎓 BCA Final Year Student | 💡 Exploring Modern App Development</h3>
+  </header>
 
-  <!-- 🧍 About Me -->
+  <!-- ===== About Me ===== -->
   <section id="about">
     <h2>🧍‍♂️ About Me</h2>
     <p>
-      Hello! I'm <strong>Adithye KS</strong>, a passionate <strong>BCA Final Year Student</strong> from Kerala, India.  
-      I’m an aspiring mobile app and web developer with a strong interest in Flutter, Dart, and modern development technologies.  
-      I enjoy building creative projects that make real-world impact — blending technology, problem-solving, and user experience design.
-    </p>
-    <p>
-      My goal is to continuously learn, grow, and contribute to innovative tech solutions that make our world more sustainable 🌱.
+      Hello! I'm <strong>Adithye KS</strong>, a <strong>BCA Final Year Student</strong> from Kerala, India.  
+      I’m passionate about modern software development, and I enjoy transforming ideas into reality through technology.  
+      My main area of interest is <strong>mobile app development</strong> using <strong>Flutter & Dart</strong>,  
+      and I’m focused on building creative and sustainable digital solutions that have real-world impact.
     </p>
   </section>
 
-  <!-- 💪 Strengths -->
+  <!-- ===== Strengths ===== -->
   <section id="strengths">
     <h2>💪 Strengths</h2>
-    <div class="strengths">
-      <span>Creative Thinking</span>
-      <span>Problem Solving</span>
-      <span>Team Collaboration</span>
-      <span>Adaptability</span>
-      <span>Quick Learner</span>
-      <span>Positive Attitude</span>
+    <div class="grid-container">
+      <div class="grid-item">Creative Thinking</div>
+      <div class="grid-item">Problem Solving</div>
+      <div class="grid-item">Team Collaboration</div>
+      <div class="grid-item">Adaptability</div>
+      <div class="grid-item">Quick Learner</div>
+      <div class="grid-item">Positive Attitude</div>
     </div>
   </section>
 
-  <!-- 🧠 Technical Skills -->
+  <!-- ===== Technical Skills ===== -->
   <section id="skills">
     <h2>🧠 Technical Skills</h2>
     <div class="skills">
-      <span>Java</span>
-      <span>Python</span>
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>React</span>
-      <span>Flutter</span>
-      <span>Dart</span>
-      <span>SQL</span>
-      <span>Git</span>
-      <span>GitHub</span>
+      <div class="skill-card">Java</div>
+      <div class="skill-card">Python</div>
+      <div class="skill-card">HTML</div>
+      <div class="skill-card">CSS</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">React</div>
+      <div class="skill-card">Flutter</div>
+      <div class="skill-card">Dart</div>
+      <div class="skill-card">SQL</div>
+      <div class="skill-card">Git</div>
+      <div class="skill-card">GitHub</div>
     </div>
   </section>
 
-  <!-- 🚀 Projects -->
+  <!-- ===== Projects ===== -->
   <section id="projects">
     <h2>🚀 My Projects</h2>
 
     <div class="project">
       <h3>♻️ EcoCycle – E-Waste Management App</h3>
       <p>
-        <strong>EcoCycle</strong> is my main project — a mobile app focused on promoting safe electronic waste recycling and awareness.  
-        It connects users to nearby collection centers and encourages eco-friendly actions.
+        <strong>EcoCycle</strong> is my main project — a mobile application that promotes safe electronic waste management.  
+        It connects users with nearby collection centers and encourages responsible recycling habits.
       </p>
       <p><strong>Tech Used:</strong> Flutter, Dart, Supabase</p>
       <a href="https://github.com/AdithyeKS/EcoCycle" target="_blank" class="btn">🔗 View on GitHub</a>
@@ -206,18 +264,18 @@
     <div class="project">
       <h3>🏅 Sports-Academix – Sports Management System</h3>
       <p>
-        <strong>Sports-Academix</strong> is my mini-project, developed as a <strong>group project</strong> to manage players, teams, and matches efficiently.  
-        It helps maintain records digitally using web technologies.
+        <strong>Sports-Academix</strong> is a mini-project developed as a group team project.  
+        It helps manage players, matches, and teams efficiently with a clean web interface.
       </p>
       <p><strong>Tech Used:</strong> HTML, CSS, JavaScript, PHP, MySQL</p>
       <a href="https://github.com/AdithyeKS/Sports-Academix" target="_blank" class="btn">🔗 View on GitHub</a>
     </div>
   </section>
 
-  <!-- 📫 Contact -->
+  <!-- ===== Contact ===== -->
   <section id="contact">
     <h2>📫 Contact</h2>
-    <p>Feel free to connect and collaborate with me:</p>
+    <p>Let’s connect and collaborate on something innovative.</p>
     <div class="social">
       <a href="mailto:adithyeks3333@gmail.com" target="_blank">📧 Email</a> |
       <a href="https://www.linkedin.com/in/adithye-ks" target="_blank">🔗 LinkedIn</a> |
@@ -230,5 +288,16 @@
     <p>© 2025 Adithye KS</p>
   </footer>
 
+  <!-- ✅ JavaScript for Fade-In Animation -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    window.addEventListener("scroll", () => {
+      const trigger = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if (top < trigger) section.classList.add("visible");
+      });
+    });
+  </script>
 </body>
 </html>
