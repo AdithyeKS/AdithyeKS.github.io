@@ -1,245 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Adithye KS | Portfolio</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adithye KS | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      body {
-        font-family: "Segoe UI", sans-serif;
-        background-color: #0d1117;
-        color: #c9d1d9;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 30px;
-      }
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
 
-      h1,
-      h2,
-      h3 {
-        color: #58a6ff;
-      }
+    img.profile {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #58a6ff;
+      box-shadow: 0 0 20px rgba(88,166,255,0.3);
+      margin-bottom: 20px;
+    }
 
-      h1 {
-        margin-bottom: 10px;
-        font-size: 2.2rem;
-      }
+    h1 {
+      color: #58a6ff;
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
 
-      h3 {
-        color: #a2a9b5;
-        font-weight: 400;
-        margin-bottom: 20px;
-      }
+    h3 {
+      color: #a3a3a3;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
 
-      p {
-        max-width: 800px;
-        text-align: center;
-        color: #a6adb7;
-        line-height: 1.6;
-        margin-bottom: 20px;
-      }
+    section {
+      width: 100%;
+      max-width: 900px;
+      background: #161b22;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      margin: 25px 0;
+    }
 
-      section {
-        width: 100%;
-        max-width: 900px;
-        margin-top: 50px;
-        padding: 25px;
-        background: #161b22;
-        border-radius: 12px;
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-      }
+    h2 {
+      color: #58a6ff;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #58a6ff;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
 
-      .skills-list,
-      .strengths-list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 20px;
-      }
+    p {
+      line-height: 1.6;
+      color: #a6adb7;
+      margin-bottom: 10px;
+      text-align: justify;
+    }
 
-      .skills-list span,
-      .strengths-list span {
-        background: #21262d;
-        color: #58a6ff;
-        padding: 10px 15px;
-        border-radius: 8px;
-        font-size: 15px;
-        transition: background 0.3s;
-      }
+    .skills, .strengths {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
 
-      .skills-list span:hover,
-      .strengths-list span:hover {
-        background: #58a6ff;
-        color: #fff;
-      }
+    .skills span, .strengths span {
+      background: #21262d;
+      color: #58a6ff;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: 0.3s;
+      font-size: 15px;
+    }
 
-      .project {
-        background: #21262d;
-        padding: 20px;
-        border-radius: 10px;
-        margin-top: 20px;
-        text-align: left;
-      }
+    .skills span:hover, .strengths span:hover {
+      background: #58a6ff;
+      color: #fff;
+    }
 
-      .project h3 {
-        color: #58a6ff;
-        margin-bottom: 8px;
-      }
+    .project {
+      background: #21262d;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 15px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    }
 
-      .project p {
-        text-align: left;
-      }
+    .project h3 {
+      color: #58a6ff;
+      margin-bottom: 10px;
+    }
 
-      a.btn {
-        display: inline-block;
-        margin-top: 10px;
-        background: #58a6ff;
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 8px;
-        text-decoration: none;
-        transition: 0.3s;
-      }
+    a.btn {
+      display: inline-block;
+      background: #58a6ff;
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
 
-      a.btn:hover {
-        background: #1f6feb;
-      }
+    a.btn:hover {
+      background: #1f6feb;
+    }
 
-      .social a {
-        color: #58a6ff;
-        margin: 0 10px;
-        text-decoration: none;
-        transition: 0.3s;
-      }
+    .social a {
+      color: #58a6ff;
+      margin: 0 8px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
 
-      .social a:hover {
-        color: #1f6feb;
-      }
+    .social a:hover {
+      color: #1f6feb;
+    }
 
-      footer {
-        margin-top: 50px;
-        text-align: center;
-        color: #8b949e;
-      }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #8b949e;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
 
-      img.profile {
-        width: 140px;
-        height: 140px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid #58a6ff;
-        margin-bottom: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <img src="profile.jpg" alt="Adithye KS" class="profile" />
-    <h1>👋 Hi, I'm <span style="color: #58a6ff">Adithye KS</span></h1>
-    <h3>🎓 BCA Final Year Student | 💡 Exploring Modern App Development</h3>
+  <!-- 👤 Profile Header -->
+  <img src="profile.jpg" alt="Adithye KS" class="profile">
+  <h1>👋 Hi, I'm Adithye KS</h1>
+  <h3>🎓 BCA Final Year Student | 💡 Exploring Modern App Development</h3>
 
-    <section id="about">
-      <h2>🧍‍♂️ About Me</h2>
+  <!-- 🧍 About Me -->
+  <section id="about">
+    <h2>🧍‍♂️ About Me</h2>
+    <p>
+      Hello! I'm <strong>Adithye KS</strong>, a passionate <strong>BCA Final Year Student</strong> from Kerala, India.  
+      I’m an aspiring mobile app and web developer with a strong interest in Flutter, Dart, and modern development technologies.  
+      I enjoy building creative projects that make real-world impact — blending technology, problem-solving, and user experience design.
+    </p>
+    <p>
+      My goal is to continuously learn, grow, and contribute to innovative tech solutions that make our world more sustainable 🌱.
+    </p>
+  </section>
+
+  <!-- 💪 Strengths -->
+  <section id="strengths">
+    <h2>💪 Strengths</h2>
+    <div class="strengths">
+      <span>Creative Thinking</span>
+      <span>Problem Solving</span>
+      <span>Team Collaboration</span>
+      <span>Adaptability</span>
+      <span>Quick Learner</span>
+      <span>Positive Attitude</span>
+    </div>
+  </section>
+
+  <!-- 🧠 Technical Skills -->
+  <section id="skills">
+    <h2>🧠 Technical Skills</h2>
+    <div class="skills">
+      <span>Java</span>
+      <span>Python</span>
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>React</span>
+      <span>Flutter</span>
+      <span>Dart</span>
+      <span>SQL</span>
+      <span>Git</span>
+      <span>GitHub</span>
+    </div>
+  </section>
+
+  <!-- 🚀 Projects -->
+  <section id="projects">
+    <h2>🚀 My Projects</h2>
+
+    <div class="project">
+      <h3>♻️ EcoCycle – E-Waste Management App</h3>
       <p>
-        Hello! I'm <strong>Adithye KS</strong>, a passionate
-        <strong>BCA Final Year Student</strong> from Kerala, India. I enjoy
-        creating meaningful digital solutions and learning modern technologies.
-        My main focus right now is <strong>mobile app development</strong> using
-        <strong>Flutter & Dart</strong>. I love designing smooth user
-        interfaces, building apps that make a difference, and continuously
-        improving my coding skills.
+        <strong>EcoCycle</strong> is my main project — a mobile app focused on promoting safe electronic waste recycling and awareness.  
+        It connects users to nearby collection centers and encourages eco-friendly actions.
       </p>
-    </section>
+      <p><strong>Tech Used:</strong> Flutter, Dart, Supabase</p>
+      <a href="https://github.com/AdithyeKS/EcoCycle" target="_blank" class="btn">🔗 View on GitHub</a>
+    </div>
 
-    <section id="strengths">
-      <h2>💪 My Strengths</h2>
-      <div class="strengths-list">
-        <span>Creative Thinking</span>
-        <span>Problem Solving</span>
-        <span>Team Collaboration</span>
-        <span>Adaptability</span>
-        <span>Positive Attitude</span>
-        <span>Quick Learner</span>
-      </div>
-    </section>
+    <div class="project">
+      <h3>🏅 Sports-Academix – Sports Management System</h3>
+      <p>
+        <strong>Sports-Academix</strong> is my mini-project, developed as a <strong>group project</strong> to manage players, teams, and matches efficiently.  
+        It helps maintain records digitally using web technologies.
+      </p>
+      <p><strong>Tech Used:</strong> HTML, CSS, JavaScript, PHP, MySQL</p>
+      <a href="https://github.com/AdithyeKS/Sports-Academix" target="_blank" class="btn">🔗 View on GitHub</a>
+    </div>
+  </section>
 
-    <section id="skills">
-      <h2>🧠 Technical Skills</h2>
-      <div class="skills-list">
-        <span>Java</span>
-        <span>Python</span>
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>React</span>
-        <span>Flutter</span>
-        <span>Dart</span>
-        <span>SQL</span>
-        <span>Git</span>
-        <span>GitHub</span>
-      </div>
-    </section>
+  <!-- 📫 Contact -->
+  <section id="contact">
+    <h2>📫 Contact</h2>
+    <p>Feel free to connect and collaborate with me:</p>
+    <div class="social">
+      <a href="mailto:adithyeks3333@gmail.com" target="_blank">📧 Email</a> |
+      <a href="https://www.linkedin.com/in/adithye-ks" target="_blank">🔗 LinkedIn</a> |
+      <a href="https://github.com/AdithyeKS" target="_blank">💻 GitHub</a>
+    </div>
+  </section>
 
-    <section id="projects">
-      <h2>🚀 My Projects</h2>
+  <footer>
+    <p>⭐ “Learning today, building tomorrow — one project at a time.”</p>
+    <p>© 2025 Adithye KS</p>
+  </footer>
 
-      <div class="project">
-        <h3>♻️ EcoCycle – E-Waste Management App</h3>
-        <p>
-          <strong>EcoCycle</strong> is my main project — a mobile app that
-          promotes safe E-waste management and environmental awareness. It helps
-          users find collection centers and learn proper recycling methods.
-        </p>
-        <p><strong>Tech Used:</strong> Flutter, Dart, Supabase</p>
-        <a
-          href="https://github.com/AdithyeKS/EcoCycle"
-          class="btn"
-          target="_blank"
-          >View on GitHub</a
-        >
-      </div>
-
-      <div class="project">
-        <h3>🏅 Sports-Academix – Sports Management System</h3>
-        <p>
-          <strong>Sports-Academix</strong> is my mini-project, developed as a
-          <strong>group project</strong> for managing players, teams, and match
-          records digitally. It’s built using web technologies and demonstrates
-          full CRUD functionality.
-        </p>
-        <p><strong>Tech Used:</strong> HTML, CSS, JavaScript, PHP, MySQL</p>
-        <a
-          href="https://github.com/AdithyeKS/Sports-Academix"
-          class="btn"
-          target="_blank"
-          >View on GitHub</a
-        >
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>📫 Connect With Me</h2>
-      <p>Let’s connect and collaborate on new ideas!</p>
-      <div class="social">
-        <a href="mailto:adithyeks3333@gmail.com" target="_blank">📧 Email</a> |
-        <a href="https://www.linkedin.com/in/adithye-ks" target="_blank"
-          >🔗 LinkedIn</a
-        >
-        |
-        <a href="https://github.com/AdithyeKS" target="_blank">💻 GitHub</a>
-      </div>
-    </section>
-
-    <footer>
-      <p>⭐ “Learning today, building tomorrow — one project at a time.”</p>
-      <p>© 2025 Adithye KS</p>
-    </footer>
-  </body>
+</body>
 </html>
